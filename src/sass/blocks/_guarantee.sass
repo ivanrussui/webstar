@@ -1,0 +1,45 @@
+.guarantee
+  padding-top: 23px
+  &__title
+    margin: auto
+    max-width: 642px
+  &-documents
+    margin-top: 99px
+    margin-bottom: 138px
+    display: flex
+    justify-content: space-evenly
+    flex-wrap: wrap
+  &-board
+    max-width: 270px
+    &__image
+      margin-bottom: 41px
+    &__text
+      display: block
+      text-align: center
+      font-size: 16px
+      +bold
+
+@media (max-width: 1200px)
+  .guarantee
+    &-documents
+      margin-bottom: 0
+    &-board
+      &__text
+        margin-bottom: 44px
+        font-size: 14px
+      &:last-child
+        .guarantee-board__text
+          margin-bottom: 0
+          // снимает у последнего класса guarantee-board__text мардин боттом
+      // &:last-child
+      //   &>span
+      //     margin-bottom: 0
+          // альтернатива решения выше обращение через тег span
+
+@media (max-width: 768px)
+  .guarantee
+    &-documents
+      display: block
+    &-board
+      margin-left: auto
+      margin-right: auto

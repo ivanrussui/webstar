@@ -1,0 +1,55 @@
+// .arrow
+//   margin-top: 15px
+//   text-align: center
+//   cursor: pointer
+
+//   &_button-up
+//     border: solid $arrow
+//     border-width: 3px 3px 0 0
+//     display: inline-block
+//     padding: 9px 9px 9px 9px
+//     transform: rotate(-45deg)
+//     -webkit-transform: rotate(-45deg)
+
+//   &_button-text
+//     display: block
+//     color: $arrow
+//     +bold
+// это была полностью свеертанная мной кнопка
+
+
+#arrow
+  display: inline-block
+  background-color: $main-color
+  width: 50px
+  height: 50px
+  text-align: center
+  border-radius: 4px
+  margin: 30px
+  position: fixed
+  bottom: 30px
+  right: 30px
+  transition: background-color .3s, opacity .5s, visibility .5s
+  opacity: 0
+  visibility: hidden
+  z-index: 1000
+
+#arrow:hover
+  cursor: pointer
+  background-color: lighten($main-color, 10%)
+
+#arrow:active
+  background-color: darken($main-color, 10%)
+
+#arrow:after 
+  content: "\f077"
+  font-family: FontAwesome
+  font-weight: normal
+  font-style: normal
+  font-size: 2em
+  line-height: 50px
+  color: $secondary
+
+#arrow.show
+  opacity: 1
+  visibility: visible

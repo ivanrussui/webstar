@@ -1,0 +1,66 @@
+*
+  box-sizing: border-box
+body
+  +reg
+img
+  max-width: 100%
+.container
+  width: 1170px
+  margin: auto
+@media (max-width: 1200px)
+  .container
+    width: 760px
+@media (max-width: 768px)
+  .container
+    max-width: 580px
+    width: 90%
+  
+  // .section 
+  //   padding-top: 60px
+  //   padding-bottom: 60px
+  // забей этот код ваще ниче не решает потому что ниже есть такой тег, он ошибся в видео
+
+@media (max-width: 576px)
+  .container
+    max-width: 460px
+// этот медиа запрос писал я хз из-за него глюки
+
+.button
+  border-radius: 10px
+  background-color: $main-color
+  border: none
+  padding: 18px 30px
+  &:hover
+    background-color: lighten($main-color, 10%)
+    cursor: pointer
+.section
+  padding: 90px 0
+  &-title
+    font-size: 24px
+    text-align: center
+    max-width: 500px
+    +bold
+  &-subtitle
+    display: block
+    font-size: 16px
+.input
+  border: 1px solid $border-input
+  padding: 20px 26px
+  font-size: 15px
+  border-radius: 10px
+  outline: none
+  // фокус писал я
+  &:focus
+    border: 1px solid $main-color
+.arrows
+  &__left, &__right
+    &:hover
+      cursor: pointer
+      // он делал так хотя можно было 1 строчкой курсор поинтер задать сразу родителю без ховера
+
+.invalid
+  border: 1px solid red
+#username-error, #phone-error, #email-error
+  border: none
+  color: red
+// это для формы код
