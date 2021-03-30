@@ -21,7 +21,6 @@
 		&:hover
 			background-color: lighten($main-color, 10%)
 			cursor: pointer
-		
 	&__phone
 		display: inline-block
 		color: $text-color
@@ -29,6 +28,7 @@
 		text-decoration: none
 		margin-top: 10px
 		+bold
+
 @media (max-width: 768px)
 	.navbar
 		&__contacts
@@ -36,5 +36,7 @@
 		&__button
 			font-size: 12px
 			padding: 15px 26px
+			&:hover
+				background-color: $main-color
 		&__logo
 			width: 90px

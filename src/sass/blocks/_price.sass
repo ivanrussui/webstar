@@ -2,15 +2,9 @@
   &__title
     margin: auto
     margin-bottom: 58px
-    // animation-name: slideRight
-    // animation-duration: 1.5s
-    // animation-timing-function: eise-in
   &__subtitle
     margin-bottom: 59px
     text-align: center
-    // animation-name: slideRight
-    // animation-duration: 1s
-    // animation-timing-function: eise
   &__card
     margin-bottom: 30px
 .card
@@ -68,7 +62,17 @@
 @media (max-width: 768px)
   .cards
     justify-content: center
+		.card
+			&:hover
+				box-shadow: none
+				.card__image:before
+					opacity: 0
+			&__link:hover
+				&::after
+					height: 3px
+
 @media (max-width: 576px)
   .card
     &__title
     font-size: 13px
+

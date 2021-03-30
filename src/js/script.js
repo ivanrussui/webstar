@@ -1,5 +1,64 @@
-// Валидация формы
+// Иництализация WOW.js
+new WOW().init();
+
 $(document).ready(function () {
+
+  // modal
+  const modal = $('#modal');
+  const close = $('#close');
+
+  $('#button').on('click', function () {
+    $('.overlay, #call').fadeIn('slow');
+  });
+  $('.call__close').on('click', function () {
+    $('.overlay, #call, .modal_active').fadeOut(450);
+  });
+
+  close.on('click', function () {
+    modal.removeClass('modal_active');
+  });
+
+  // arrow
+  var btn = $('#arrow');
+
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 300) {
+      btn.addClass('show');
+    } else {
+      btn.removeClass('show');
+    }
+  });
+
+  btn.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+  });
+
+  // слайдер Slick
+  $('.slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow: $('.arrows__left'),
+    nextArrow: $('.arrows__right'),
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+
+  // Валидация формы
   $('#brif-form').validate({
     rules: {
       name: {
@@ -66,6 +125,8 @@ $(document).ready(function () {
     errorClass: 'invalid',
   });
 
+	
+
   // Ajax
   $('form').submit(function (e) {
     e.preventDefault();
@@ -80,16 +141,15 @@ $(document).ready(function () {
       data: $(this).serialize(),
     }).done(function () {
       $(this).find('input').val('');
-			$('.overlay, #call').fadeOut();
+      $('.overlay, #call').fadeOut();
       $('#modal').fadeIn(1000);
-      $('#modal').fadeOut(1000);
-
+      $('#modal').fadeOut(3000);
 
       $('form').trigger('reset');
     });
     return false;
   });
-});
 
-// Маска для телефона
-$('.phone').mask('+7(999)999-99-99');
+  // Маска для телефона
+  $('.phone').mask('+7(999)999-99-99');
+});
