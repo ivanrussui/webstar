@@ -50,8 +50,10 @@
 						<a href="tel:+7(495)42-251-31" class="navbar__phone">+7 (495) 42-251-31</a>
 					</div>
 					<!-- /.navbar__contacts -->
-					<button class="button navbar__button wow bounceInRight"
-						onclick="ym(64384183, 'reachGoal', 'button'); return true;" id="button">Перезвоните мне</button>
+					<button class="navbar__button wow bounceInRight" id="button"
+						onclick="ym(64384183, 'reachGoal', 'button'); return true;">Перезвоните мне</button>
+					<!-- <button class="navbar__button wow bounceInRight" id="button"
+						onclick="ym(64384183, 'reachGoal', 'button'); return true;">Перезвоните мне</button> -->
 					<!-- /.button navbar__button -->
 				</div>
 				<!-- /.navbar__info -->
@@ -125,7 +127,7 @@
 					</span>
 					<!-- /.section-subtitle -->
 					<form action="#" id="offer-form" class="form offer__form">
-						<input type="text" name="username" class="input offer__input  wow headShake" data-wow-duration="1.5s"
+						<input type="text" name="name" class="input offer__input  wow headShake" data-wow-duration="1.5s"
 							data-wow-delay="0.5s" placeholder="Ваше имя">
 						<input type="tel" name="phone" class="input offer__input phone wow headShake" data-wow-duration="1.5s"
 							data-wow-delay="0.5s" placeholder="Ваш телефон">
@@ -469,7 +471,7 @@
 							Для этого заполните форму ниже
 						</span>
 						<form action="#" id="brif-form">
-							<input type="text" name="username" class="input brif__input" placeholder="Ваше имя">
+							<input type="text" name="name" class="input brif__input" placeholder="Ваше имя">
 							<input type="tel" name="phone" class="input brif__input phone" placeholder="Ваш телефон">
 							<input type="email" name="email" class="input brif__input" placeholder="Ваш email">
 							<button class="button brif__button">
@@ -554,6 +556,33 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
+
+<!-- форма обратной связи по кнопке  вверху -->
+	<div class="overlay">
+		<div class="call" id="call">
+			<div class="call__close modal__close">&times;</div>
+			<div class="call__title">Напишите имя и номер телефона</div>
+			<div class="call__subtitle">И мы вам перезвоним!</div>
+			<form action="#" id="call-form" class="form  call__form">
+				<input type="text" name="name" class="input call__input" placeholder="Ваше имя">
+				<input type="tel" name="phone" class="input call__input" placeholder="Ваш телефон">
+				<button class="button offer__button" id="call-btn">Перезвоните мне</button>
+			</form>
+		</div>
+	</div>
+	<!-- <div class="overlay">
+		<div class="call" id="call">
+			<div class="call__close modal__close">&times;</div>
+			<div class="call__title">Напишите имя и номер телефона</div>
+			<div class="call__subtitle">И мы вам перезвоним!</div>
+			<form action="#" id="call-form" class="form modal__form">
+				<input type="text" name="name" class="input offer__input" placeholder="Ваше имя">
+				<input type="tel" name="phone" class="input offer__input" placeholder="Ваш телефон">
+				<button class="button offer__button" id="call-btn">Перезвоните мне</button>
+			</form>
+		</div>
+	</div> -->
+
 
 	<!-- тут я писал разметку сам для кнопки -->
 	<!-- <div class="arrow">

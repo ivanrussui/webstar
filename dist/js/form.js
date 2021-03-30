@@ -2,7 +2,7 @@
 $(document).ready(function () {
   $('#brif-form').validate({
     rules: {
-      username: {
+      name: {
         required: true,
         minlength: 2,
         maxlength: 15,
@@ -14,7 +14,7 @@ $(document).ready(function () {
       },
     },
     messages: {
-      username: {
+      name: {
         required: 'Введите ваше имя',
         minlength: jQuery.validator.format('Введите минимум {0} символа'),
         maxlength: jQuery.validator.format('Введите максимум {0} символов'),
@@ -29,7 +29,7 @@ $(document).ready(function () {
   });
   $('#offer-form').validate({
     rules: {
-      username: {
+      name: {
         required: true,
         minlength: 2,
         maxlength: 15,
@@ -37,7 +37,26 @@ $(document).ready(function () {
       phone: 'required',
     },
     messages: {
-      username: {
+      name: {
+        required: 'Введите ваше имя',
+        minlength: jQuery.validator.format('Введите минимум {0} символа'),
+        maxlength: jQuery.validator.format('Введите максимум {0} символов'),
+      },
+      phone: 'Введите ваш номер телефона',
+    },
+    errorClass: 'invalid',
+  });
+  $('#call-form').validate({
+    rules: {
+      name: {
+        required: true,
+        minlength: 2,
+        maxlength: 15,
+      },
+      phone: 'required',
+    },
+    messages: {
+      name: {
         required: 'Введите ваше имя',
         minlength: jQuery.validator.format('Введите минимум {0} символа'),
         maxlength: jQuery.validator.format('Введите максимум {0} символов'),
@@ -61,6 +80,7 @@ $(document).ready(function () {
       data: $(this).serialize(),
     }).done(function () {
       $(this).find('input').val('');
+			$('.overlay, #call').fadeOut();
       $('#modal').fadeIn(1000);
       $('#modal').fadeOut(1000);
 

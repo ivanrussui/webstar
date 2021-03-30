@@ -1,15 +1,16 @@
-$(document).ready(function() {
-  var button = $('#button');
-  var modal = $('#modal');
-  var close = $('#close');
+$(document).ready(function () {
+  const modal = $('#modal');
+  const close = $('#close');
 
-  button.on('click', function() {
-    modal.addClass('modal_active');
+  $('#button').on('click', function () {
+    $('.overlay, #call').fadeIn('slow');
   });
-  close.on('click', function() {
+	$('.call__close').on('click', function () {
+    $('.overlay, #call, .modal_active').fadeOut(450);
+  });
+
+  close.on('click', function () {
     modal.removeClass('modal_active');
   });
-  setInterval(() => {
-    modal.removeClass('modal_active')
-  }, 5000);
+
 });
